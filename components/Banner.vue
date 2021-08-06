@@ -1,83 +1,33 @@
 <template>
-  <div class="tabs">
-    <NuxtLink to="/" class="tab--logo">
-      <logo />
-    </NuxtLink>
-    <NuxtLink to="/heart" class="tab--main">
-      Heart<span>Wie ben ik</span>
-    </NuxtLink>
-    <NuxtLink to="/core" class="tab--main">
-      Core<span>Wat doe ik</span>
-    </NuxtLink>
-    <NuxtLink to="/healing" class="tab--main">
-      Healing<span>Mijn methode</span>
-    </NuxtLink>
-    <NuxtLink to="/prices" class="tab--main">
-      &nbsp;<span>Tarieven</span>
-    </NuxtLink>
-    <NuxtLink to="/contact" class="tab--main">
-      &nbsp;<span>Contact</span>
-    </NuxtLink>
-  </div>
+  <section class="container-row">
+    <article class="banner">
+      <h1>Ik ontcijfer de alarmsignalen<br />van je lichaam</h1>
+    </article>
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'Tabs',
+  name: 'Banner',
 };
 </script>
 
 <style lang="scss" scoped>
-@keyframes lift {
-  from {
-    padding-bottom: 0.3em;
-  }
-  to {
-    padding-bottom: 0;
-  }
-}
+.container-row {
+  @include responsive-background(
+    'home-quote',
+    (3840, 2560, 1680, 1440, 1280, 1024),
+    top left
+  );
 
-@keyframes lower {
-  from {
-    padding-bottom: 0;
-  }
-  to {
-    padding-bottom: 0.3em;
-  }
-}
-
-.tabs {
-  margin-top: 3em;
-  display: flex;
-  flex-direction: row;
-
-  .tab--logo {
-    margin-right: 7em;
-  }
-
-  .tab--main {
-    animation-name: lower;
-    animation-duration: 200ms;
-    color: $primary-color;
-    margin: auto 0;
+  .banner {
     display: flex;
-    flex-direction: column;
-    font-size: 2.3em;
-    font-weight: 600;
-    text-align: left;
-    text-decoration: none;
-    padding: 0.3em;
+    align-items: center;
+    height: 34em;
+    justify-content: center;
 
-    span {
-      color: #000;
-      font-size: 0.8em;
-      font-weight: 340;
-    }
-
-    &:hover {
-      padding-bottom: 0;
-      animation-name: lift;
-      animation-duration: 200ms;
+    h1 {
+      color: #fff;
     }
   }
 }

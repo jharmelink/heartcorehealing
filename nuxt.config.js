@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'heartcorehealing',
+    title: 'Heart.Core.Healing',
     htmlAttrs: {
       lang: 'en',
     },
@@ -30,7 +30,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Heart Core Healing',
+        content: 'Heart.Core.Healing',
       },
     ],
     link: [
@@ -108,9 +108,6 @@ export default {
     ],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
@@ -126,8 +123,12 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/style-resources'],
+
+  styleResources: {
+    scss: ['@/assets/styles/*.scss'],
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-}
+};

@@ -1,16 +1,31 @@
 <template>
-  <NuxtLink to="/appointment" class="button">Afspraak maken</NuxtLink>
+  <section class="container-row">
+    <div class="floating-button">
+      <Button :text="'Maak een afspraak'" :link="'/appointment'" />
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'Button',
+  name: 'FloatingButton',
 };
 </script>
 
 <style lang="scss" scoped>
-.button {
-  background-color: #813c39;
-  padding: 1em;
+@include appear($secondary-color);
+
+.container-row {
+  z-index: 0;
+
+  .floating-button {
+    .button {
+      margin: -0.5em 0 -1.1em 0;
+      float: right;
+      font-size: 2.4em;
+      font-weight: 500;
+      padding: 0.5em 0.6em;
+    }
+  }
 }
 </style>

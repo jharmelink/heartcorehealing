@@ -1,9 +1,14 @@
-<template></template>
+<template>
+  <div class="container">
+    <div>
+      <Tabs />
+      <Logo />
+    </div>
+  </div>
+</template>
 
 <script>
 export default {
   name: 'core',
 };
 </script>
-
-<style scoped></style>

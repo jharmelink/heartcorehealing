@@ -1,1 +1,52 @@
 $primary-color: #813c39;
+$secondary-color: #dac6ba;
+
+@font-face {
+  font-family: 'Work Sans';
+  src: local('Work Sans'),
+  url(~assets/fonts/WorkSans-VariableFont_wght.ttf) format('truetype-variations');
+}
+
+@font-face {
+  font-family: 'Roustel';
+  src: local('Roustel'),
+  url(~assets/fonts/Roustel.ttf) format('truetype-variations');
+}
+
+@mixin appear($hex-color) {
+  @keyframes appear {
+    from {
+      text-decoration-color: unquote($hex-color + '00');
+    }
+    to {
+      text-decoration-color: $hex-color + ff;
+    }
+  }
+
+  @keyframes disappear {
+    from {
+      text-decoration-color: $hex-color + ff;
+    }
+    to {
+      text-decoration-color: unquote($hex-color + '00');
+    }
+  }
+}
+
+@mixin responsive-background($image-base-name, $resolutions, $alignment) {
+  background: url('assets/images/#{$image-base-name}-full.jpg') #{$alignment} no-repeat;
+  background-size: 100%;
+
+  @each $resolution in $resolutions {
+    @media screen and (max-width: #{$resolution}px) {
+      background-image: url('assets/images/#{$image-base-name}-#{$resolution}.jpg');
+      background-size: #{$resolution}px;
+
+      @if $resolution <= 2000 {
+        @media (min-resolution: 2dppx) {
+          background-image: url('assets/images/#{$image-base-name}-#{$resolution * 2}.jpg');
+        }
+      }
+    }
+  }
+}

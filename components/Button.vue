@@ -1,40 +1,37 @@
 <template>
-  <section class="container-row">
-    <div class="floating-button">
-      <NuxtLink to="/appointment">Afspraak maken</NuxtLink>
-    </div>
-  </section>
+  <NuxtLink :to="link" class="button">{{ text }}</NuxtLink>
 </template>
 
 <script>
 export default {
-  name: 'FloatingButton',
+  name: 'Button',
+  props: {
+    text: {
+      type: String,
+      required: true,
+    },
+    link: {
+      type: String,
+      required: true,
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @include appear($secondary-color);
 
-.container-row {
-  margin: -1.2em 0 -2.5em 0;
-  z-index: 0;
+.button {
+  animation-name: disappear;
+  background-color: $primary-color;
+  color: #fff;
+  padding: 0.38em 0.5em;
+  text-decoration-color: unquote($secondary-color + '00');
+  text-decoration-thickness: 0.1em;
 
-  .floating-button {
-    a {
-      animation-name: disappear;
-      background-color: $primary-color;
-      color: #fff;
-      padding: 0.5em 0.6em;
-      float: right;
-      font-size: 2.4em;
-      font-weight: 500;
-      text-decoration-color: unquote($secondary-color + '00');
-
-      &:hover {
-        animation-name: appear;
-        text-decoration-color: $secondary-color + ff;
-      }
-    }
+  &:hover {
+    animation-name: appear;
+    text-decoration-color: $secondary-color + ff;
   }
 }
 </style>
