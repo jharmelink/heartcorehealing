@@ -27,10 +27,11 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: 'Footer',
-};
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator';
+
+@Component
+export default class Footer extends Vue {}
 </script>
 
 <style lang="scss" scoped>
@@ -65,7 +66,6 @@ footer {
       }
 
       .hr {
-        height: 1px;
         background-color: #fff;
         margin: 0.4em 0 0.9em auto;
         width: 21.73em;

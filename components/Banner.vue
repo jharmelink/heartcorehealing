@@ -6,19 +6,9 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'Banner',
-};
-</script>
-
 <style lang="scss" scoped>
 .container-row {
-  @include responsive-background(
-    'home-quote',
-    (3840, 2560, 1680, 1440, 1280, 1024),
-    top left
-  );
+  @include background-image-page('home-quote', top left);
 
   .banner {
     display: flex;

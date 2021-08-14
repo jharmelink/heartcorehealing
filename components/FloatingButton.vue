@@ -1,15 +1,16 @@
 <template>
   <section class="container-row">
     <div class="floating-button">
-      <Button :text="'Maak een afspraak'" :link="'/appointment'" />
+      <NuxtLink :to="'/appointment'" class="button">Afspraak maken</NuxtLink>
     </div>
   </section>
 </template>
 
-<script>
-export default {
-  name: 'FloatingButton',
-};
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator';
+
+@Component
+export default class FloatingButton extends Vue {}
 </script>
 
 <style lang="scss" scoped>

@@ -26,12 +26,6 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'Tabs',
-};
-</script>
-
 <style lang="scss" scoped>
 @include appear($primary-color);
 

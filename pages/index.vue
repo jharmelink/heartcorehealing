@@ -57,7 +57,9 @@
         </p>
         <p>
           <br />
-          <Button :text="'Maak een afspraak'" :link="'/appointment'" />
+          <NuxtLink :to="'/appointment'" class="button">
+            Afspraak maken
+          </NuxtLink>
         </p>
       </article>
     </section>
@@ -68,17 +70,13 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({});
+export default class extends Vue {}
 </script>
 
 <style lang="scss" scoped>
 .container {
   .background-testimonial {
-    @include responsive-background(
-      'home-testimonial',
-      (3840, 2560, 1680, 1440, 1280, 1024),
-      top center
-    );
+    @include background-image-page('home-testimonial', top center);
 
     div {
       height: 34em;

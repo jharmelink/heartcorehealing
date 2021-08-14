@@ -33,18 +33,36 @@ $secondary-color: #dac6ba;
   }
 }
 
-@mixin responsive-background($image-base-name, $resolutions, $alignment) {
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@mixin background-image-modal($image-base-name, $alignment) {
+  $resolution-map: ('3840px': 1752, '2560px': 1285, '1680px': 1168, '1440px': 1051, '1280px': 818, '1024px': 701);
+  @include responsive-background($image-base-name, $resolution-map, $alignment);
+}
+
+@mixin background-image-page($image-base-name, $alignment) {
+  $resolution-map: ('3840px': 3840, '2560px': 2560, '1680px': 1680, '1440px': 1440, '1280px': 1280, '1024px': 1024);
+  @include responsive-background($image-base-name, $resolution-map, $alignment);
+}
+
+@mixin responsive-background($image-base-name, $resolution-map, $alignment) {
   background: url('assets/images/#{$image-base-name}-full.jpg') #{$alignment} no-repeat;
   background-size: 100%;
 
-  @each $resolution in $resolutions {
-    @media screen and (max-width: #{$resolution}px) {
-      background-image: url('assets/images/#{$image-base-name}-#{$resolution}.jpg');
-      background-size: #{$resolution}px;
+  @each $screen-resolution, $image-resolution in $resolution-map {
+    @media screen and (max-width: $screen-resolution) {
+      background-image: url('assets/images/#{$image-base-name}-#{$image-resolution}.jpg');
+      background-size: #{$image-resolution}px;
 
-      @if $resolution <= 2000 {
+      @if $image-resolution <= 2000 {
         @media (min-resolution: 2dppx) {
-          background-image: url('assets/images/#{$image-base-name}-#{$resolution * 2}.jpg');
+          background-image: url('assets/images/#{$image-base-name}-#{$image-resolution * 2}.jpg');
         }
       }
     }
