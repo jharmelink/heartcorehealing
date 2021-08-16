@@ -147,20 +147,39 @@ article {
   }
 
   ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0 10em;
+    list-style: none;
+
+    &:not(.horizontal) {
+      margin-left: 1em;
+      padding-left: 0;
+
+      li {
+        padding-left: 1em;
+        text-indent: -1.17em;
+
+        &::before {
+          content: '·';
+          padding-right: 0.4em;
+          font-size: 1.9em;
+          vertical-align: middle;
+        }
+      }
+    }
 
     &.horizontal {
+      display: flex;
+      padding: 0 10em;
       flex-direction: row;
       align-items: stretch;
 
-      li {
+      li,
+      a {
         display: flex;
         flex: 1 1 0;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        text-decoration: none;
       }
     }
   }
@@ -238,6 +257,7 @@ article {
 
       h2 {
         font-size: 1.9em;
+        padding-top: 0.86em;
       }
 
       p {
