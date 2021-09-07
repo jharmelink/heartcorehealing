@@ -91,7 +91,6 @@
           Energie in al haar vormen is een boeiend onderwerp. Zowel de tastbare
           energie in de vorm van levende wezens en voorwerpen als de voelbare
           levensenergie en de ongrijpbare spirituele energie.
-          <NuxtLink to="shapes">Lees meer</NuxtLink>
         </p>
       </article>
     </section>
@@ -205,9 +204,7 @@
           verwezenlijken!
         </h3>
         <p>
-          <NuxtLink :to="'/appointment'" class="button">
-            Afspraak maken
-          </NuxtLink>
+          <AppointmentButton />
         </p>
       </article>
     </section>

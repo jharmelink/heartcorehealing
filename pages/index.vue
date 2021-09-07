@@ -29,11 +29,12 @@
           maakt je krachtig en vitaal tot in het diepste van je kern. Je bent
           één onlosmakelijk geheel. Je leven stroomt vlot en vanzelf. Het is
           mijn hartewens om jou daarin te begeleiden.<br />
-          Mijn integrale <a>behandelmethode</a> houdt rekening met dat
-          <a>subtiele samenspel</a>. Tijdens de behandeling luister ik naar het
-          verhaal van jouw lichaam. Het verklapt me de code om door te dringen
-          tot de kern van je vraag of klacht en het evenwicht op alle vlakken te
-          herstellen.
+          Mijn integrale
+          <NuxtLink to="/healing">behandelmethode</NuxtLink>
+          houdt rekening met dat subtiele samenspel. Tijdens de behandeling
+          luister ik naar het verhaal van jouw lichaam. Het verklapt me de code
+          om door te dringen tot de kern van je vraag of klacht en het evenwicht
+          op alle vlakken te herstellen.
         </p>
       </article>
     </section>
@@ -52,14 +53,12 @@
           verhelderend inzicht? Voelde je je emotioneel weer in balans? Ging je
           aan de slag met een gezondere lifestyle? Sloeg je een nieuwe richting
           in op je levenspad?<br />
-          Deel het met ons en andere geïnteresseerden in een
-          <a>Google review!</a>
+          <!--          Deel het met ons en andere geïnteresseerden in een-->
+          <!--          <a>Google review!</a>-->
         </p>
         <p>
           <br />
-          <NuxtLink :to="'/appointment'" class="button">
-            Afspraak maken
-          </NuxtLink>
+          <AppointmentButton />
         </p>
       </article>
     </section>

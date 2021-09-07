@@ -1,7 +1,7 @@
 <template>
   <section class="container-row">
     <div class="floating-button">
-      <NuxtLink :to="'/appointment'" class="button">Afspraak maken</NuxtLink>
+      <AppointmentButton />
     </div>
   </section>
 </template>
